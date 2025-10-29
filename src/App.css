@@ -11,10 +11,14 @@ body {
   height: 100vh;
 }
 
+.headerWrapper {
+  display: flex;
+  justify-content: center;
+  margin: 80px 0px 80px 0px;
+}
+
 header {
   position: fixed;
-  left: 50%;
-  transform: translateX(-50%);
   top: 40px;
   background-color: #252422;
   padding: 10px 20px 10px 20px;

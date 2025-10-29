@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import styles from "./Card.module.css";
 
 function Card({ cardID }) {
-  const [value, setValue] = useState("");
+  const initialValue = JSON.parse(localStorage.getItem(cardID));
+  const [value, setValue] = useState(initialValue == null ? 0 : initialValue);
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -18,14 +20,35 @@ function Card({ cardID }) {
   if (error) return <p>A network error was encountered</p>;
 
   const handleChange = (e) => {
-    setValue(e.target.value);
+    const inputValue = Number(e.target.value);
+    setValue(inputValue);
+    localStorage.setItem(data.id, JSON.stringify(inputValue));
+  };
+
+  const addOne = () => {
+    setValue(value + 1);
+    localStorage.setItem(data.id, JSON.stringify(value + 1));
+  };
+
+  const minusOne = () => {
+    setValue(value - 1);
+    localStorage.setItem(data.id, JSON.stringify(value - 1));
   };
 
   return (
-    <div>
-      <img src={data.image}></img>
+    <div className={styles.card}>
+      <img className={styles.cardImage} src={data.image}></img>
       <p>{data.title}</p>
-      <input value={value} onChange={handleChange}></input>
+      <p>${data.price}</p>
+      <div>
+        <button onClick={minusOne}>-</button>
+        <input
+          className={styles.input}
+          value={value}
+          onChange={handleChange}
+        ></input>
+        <button onClick={addOne}>+</button>
+      </div>
     </div>
   );
 }
