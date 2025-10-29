@@ -1,0 +1,30 @@
+.img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.home {
+    position: relative;
+}
+
+.storeName {
+    position: absolute;
+    color: white;
+    left: 50%;
+    top: 120px;
+    font-size: 80px;
+    text-shadow: -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+    transform: translateX(-50%);
+}
+
+.subtext {
+    position: absolute;
+    top: 400px;
+    font-size: 30px;
+    color: black;
+    left: 50%;
+    transform: translateX(-50%);
+}
