@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import styles from "./Card.module.css";
 
-function Card({ cardID }) {
+function Card({ cardID, handleTotal }) {
   const initialValue = JSON.parse(localStorage.getItem(cardID));
-  const [value, setValue] = useState(initialValue == null ? 0 : initialValue);
+  const [quantity, setQuantity] = useState(
+    initialValue == null ? 0 : initialValue
+  );
+  const [qtyChange, setQtyChange] = useState(0);
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -21,18 +24,24 @@ function Card({ cardID }) {
 
   const handleChange = (e) => {
     const inputValue = Number(e.target.value);
-    setValue(inputValue);
-    localStorage.setItem(data.id, JSON.stringify(inputValue));
+    setQuantity(inputValue);
+    setQtyChange(inputValue - initialValue);
   };
 
   const addOne = () => {
-    setValue(value + 1);
-    localStorage.setItem(data.id, JSON.stringify(value + 1));
+    setQuantity(quantity + 1);
+    setQtyChange(qtyChange + 1);
   };
 
   const minusOne = () => {
-    setValue(value - 1);
-    localStorage.setItem(data.id, JSON.stringify(value - 1));
+    setQuantity(quantity - 1);
+    setQtyChange(qtyChange - 1);
+  };
+
+  const addToCart = () => {
+    handleTotal(qtyChange);
+    localStorage.setItem(data.id, JSON.stringify(quantity));
+    setQtyChange(0);
   };
 
   return (
@@ -44,10 +53,11 @@ function Card({ cardID }) {
         <button onClick={minusOne}>-</button>
         <input
           className={styles.input}
-          value={value}
+          value={quantity}
           onChange={handleChange}
         ></input>
         <button onClick={addOne}>+</button>
+        <button onClick={addToCart}>Add To Cart</button>
       </div>
     </div>
   );
