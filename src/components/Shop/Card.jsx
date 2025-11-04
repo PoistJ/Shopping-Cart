@@ -22,6 +22,8 @@ function Card({ cardID, handleTotal }) {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>A network error was encountered</p>;
 
+  const price = (Math.round(data.price * 100) / 100).toFixed(2);
+
   const handleChange = (e) => {
     const inputValue = Number(e.target.value);
     setQuantity(inputValue);
@@ -40,11 +42,9 @@ function Card({ cardID, handleTotal }) {
 
   const addToCart = () => {
     handleTotal(qtyChange);
-    localStorage.setItem(data.id, JSON.stringify(quantity));
+    localStorage.setItem(data.id, JSON.stringify({quantity, price}));
     setQtyChange(0);
   };
-
-  const price = (Math.round(data.price * 100) / 100).toFixed(2);
 
   return (
     <div className={styles.card}>

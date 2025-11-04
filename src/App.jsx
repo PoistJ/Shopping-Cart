@@ -6,7 +6,7 @@ function App() {
   const [total, setTotal] = useState(() => {
     let total = 0;
     for (let i = 0; i < localStorage.length; i++) {
-      total += JSON.parse(localStorage.getItem(localStorage.key(i)));
+      total += JSON.parse(localStorage.getItem(localStorage.key(i))).quantity;
     }
     return total;
   });
