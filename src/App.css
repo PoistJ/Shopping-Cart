@@ -11,18 +11,10 @@ body {
   height: 100vh;
 }
 
-.headerWrapper {
-  display: flex;
-  justify-content: center;
-  margin: 80px 0px 80px 0px;
-}
-
 header {
-  position: fixed;
-  top: 40px;
-  background-color: #252422;
+  display: flex;
+  background-color: white;
   padding: 10px 20px 10px 20px;
-  border-radius: 50px;
   font-size: 20px;
 }
 
@@ -33,5 +25,14 @@ header > a {
 
 a:visited {
   text-decoration: none;
-  color: white;
+  color: black;
+}
+
+.shop {
+  flex-grow: 1;
+}
+
+.cart {
+  display: flex;
+  justify-self: flex-end;
 }

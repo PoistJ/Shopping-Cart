@@ -13,16 +13,14 @@ function App() {
 
   return (
     <>
-      <div className="headerWrapper">
-        <header data-testid="header-element">
-          <Link to="home">Home</Link>
-          <Link to="shop">Shop</Link>
-          <Link to="cart">
-            Cart
-            <div>{total}</div>
-          </Link>
-        </header>
-      </div>
+      <header data-testid="header-element">
+        <Link to="home">CTRL+FIT</Link>
+        <Link className="shop" to="shop">Shop</Link>
+        <Link className="cart" to="cart">
+          Cart
+          <div>{total}</div>
+        </Link>
+      </header>
       <Outlet context={[total, setTotal]} />
     </>
   );
