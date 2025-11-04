@@ -16,3 +16,8 @@
 .input {
     width: 20px;
 }
+
+.cartWrapper {
+    display: flex;
+    flex-direction: column;
+}

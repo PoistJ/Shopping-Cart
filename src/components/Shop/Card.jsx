@@ -44,11 +44,13 @@ function Card({ cardID, handleTotal }) {
     setQtyChange(0);
   };
 
+  const price = (Math.round(data.price * 100) / 100).toFixed(2);
+
   return (
     <div className={styles.card}>
       <img className={styles.cardImage} src={data.image}></img>
       <p>{data.title}</p>
-      <p>${data.price}</p>
+      <p>${price}</p>
       <div>
         <button onClick={minusOne}>-</button>
         <input
