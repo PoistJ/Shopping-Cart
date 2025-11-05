@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'LogoFont';
+  src: url('./fonts/Bokor-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LinkFont';
+  src: url('./fonts/Jura-VariableFont_wght.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+
 body {
   max-width: 100vw;
   height: 100vh;
@@ -13,14 +27,18 @@ body {
 
 header {
   display: flex;
+  position: sticky;
+  top: 0px;
   background-color: white;
   padding: 10px 20px 10px 20px;
   font-size: 20px;
+  align-items: center;
 }
 
 header > a {
   margin: 0px 20px 0px 20px;
   text-decoration: none;
+  font-family: 'LinkFont', sans-serif;
 }
 
 a:visited {
@@ -34,5 +52,15 @@ a:visited {
 
 .cart {
   display: flex;
-  justify-self: flex-end;
+  padding-right: 10px;
+}
+a:first-child {
+  font-family: 'LogoFont', sans-serif;
+  font-size: 40px;
+  margin-right: 80px;
+}
+
+.cartTotal {
+  font-size: 14px;
+  margin-left: 2px;
 }

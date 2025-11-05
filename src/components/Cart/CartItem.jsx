@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import styles from "./Cart.module.css";
 
-function CartItem({ item, quantity }) {
+function CartItem({ item, quantity, handleTotal }) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -18,12 +19,36 @@ function CartItem({ item, quantity }) {
 
   const price = (Math.round(data.price * 100) / 100).toFixed(2);
 
+  const addOne = () => {
+    quantity += 1;
+    localStorage.setItem(data.id, JSON.stringify({ quantity, price }));
+    handleTotal(1);
+  };
+
+  const minusOne = () => {
+    quantity -= 1;
+    localStorage.setItem(data.id, JSON.stringify({ quantity, price }));
+    handleTotal(-1);
+  };
+
   return (
-    <div>
-      <img src={data.image}></img>
-      <p>{data.title}</p>
-      <p>Quantity: {quantity}</p>
-      <p>${price}</p>
+    <div className={styles.itemWrapper}>
+      <img className={styles.productImage} src={data.image}></img>
+      <div className={styles.infoWrapper}>
+        <p className={styles.itemName}>{data.title}</p>
+        <div className={styles.overallQtyWrapper}>
+          <div className={styles.quantityWrapper}>
+            <button className={styles.qtyBtn} onClick={minusOne}>
+              -
+            </button>
+            <p>{quantity}</p>
+            <button className={styles.qtyBtn} onClick={addOne}>
+              +
+            </button>
+          </div>
+        </div>
+        <p>${price}</p>
+      </div>
     </div>
   );
 }

@@ -14,11 +14,11 @@ function App() {
   return (
     <>
       <header data-testid="header-element">
-        <Link to="home">CTRL+FIT</Link>
-        <Link className="shop" to="shop">Shop</Link>
+        <Link to="home">C T R L + F I T</Link>
+        <Link className="shop" to="shop">SHOP</Link>
         <Link className="cart" to="cart">
-          Cart
-          <div>{total}</div>
+          CART
+          <div className="cartTotal">{total}</div>
         </Link>
       </header>
       <Outlet context={[total, setTotal]} />

@@ -1,0 +1,107 @@
+@font-face {
+  font-family: "HeaderFont";
+  src: url("./Bokor-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: "ItemFont";
+    src: url("./FunnelDisplay-VariableFont_wght.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.cartPage {
+  display: flex;
+  flex-direction: column;
+  background-color: #edede9;
+  padding: 0px 100px 0px 100px;
+}
+
+.cartWrapper {
+  display: flex;
+}
+
+.cartHeader {
+  text-align: center;
+  font-family: "HeaderFont", sans-serif;
+  font-size: 30px;
+  margin: 40px 0px 10px 0px;
+  letter-spacing: 6px;
+}
+
+.lineBreak {
+  width: 100%;
+  border-color: e7ecef;
+}
+
+.itemTotal {
+  margin-bottom: 8px;
+}
+
+.cartItems {
+  flex-grow: 1;
+  margin-right: 100px;
+}
+
+.costWrapper {
+  width: 700px;
+}
+
+.subtotalWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.deliveryWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.totalWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.itemWrapper {
+  display: flex;
+  margin: 20px 0px;
+}
+
+.productImage {
+  width: 160px;
+}
+
+.infoWrapper {
+  display: grid;
+  flex-grow: 1;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  text-align: center;
+  margin-left: 40px;
+  font-family: "ItemFont";
+  
+}
+
+.itemName {
+    text-align: left;
+}
+
+.quantityWrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 16px 0px;
+    
+}
+
+.quantityWrapper > p {
+    margin: 0px 20px;
+}
+
+.qtyBtn {
+    border-style: none;
+    font-size: 17px;
+    font-weight: bold;
+}

@@ -4,7 +4,7 @@ import styles from "./Card.module.css";
 function Card({ cardID, handleTotal }) {
   const initialValue = JSON.parse(localStorage.getItem(cardID));
   const [quantity, setQuantity] = useState(
-    initialValue == null ? 0 : initialValue
+    initialValue === null ? 0 : initialValue.quantity
   );
   const [qtyChange, setQtyChange] = useState(0);
   const [data, setData] = useState(null);
