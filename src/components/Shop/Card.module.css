@@ -1,23 +1,59 @@
+@font-face {
+  font-family: "ItemFont";
+  src: url("./../../fonts/FunnelDisplay-VariableFont_wght.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .cardImage {
-    object-fit: contain;
-    width: 150px;
-    flex-grow: 1;
+  object-fit: contain;
+  width: 150px;
+  flex-grow: 1;
+  margin: auto;
 }
 
 .card {
-    width: 300px;
-    border-style: solid;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
+  display: grid;
+  grid-template-rows: 300px 140px;
+  font-family: "ItemFont";
 }
 
 .input {
-    width: 20px;
+  width: 20px;
+  text-align: center;
+  border-style: none;
 }
 
-.cartWrapper {
+.infoWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 14px 14px 14px;
+  background-color: white;
+}
+
+.itemTitle {
+    flex-grow: 1;
+    margin: 16px 0px 0px 0px;
+}
+
+.qtyBtn {
+    border-style: none;
+    background-color: white;
+}
+
+.quantityWrapper {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+}
+
+.addToCart {
+    background-color: black;
+    color: white;
+    font-family: "ItemFont";
+    border-radius: 12px;
+    font-size: 0.7em;
+    margin-left: 20px;
 }

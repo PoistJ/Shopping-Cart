@@ -1,13 +1,13 @@
 @font-face {
   font-family: "HeaderFont";
-  src: url("./Bokor-Regular.ttf");
+  src: url("./../../fonts/Bokor-Regular.ttf");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
     font-family: "ItemFont";
-    src: url("./FunnelDisplay-VariableFont_wght.ttf");
+    src: url("./../../fonts/FunnelDisplay-VariableFont_wght.ttf");
     font-weight: normal;
     font-style: normal;
 }
@@ -47,6 +47,7 @@
 
 .costWrapper {
   width: 700px;
+  font-family: "ItemFont";
 }
 
 .subtotalWrapper {

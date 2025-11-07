@@ -42,24 +42,26 @@ function Card({ cardID, handleTotal }) {
 
   const addToCart = () => {
     handleTotal(qtyChange);
-    localStorage.setItem(data.id, JSON.stringify({quantity, price}));
+    localStorage.setItem(data.id, JSON.stringify({ quantity, price }));
     setQtyChange(0);
   };
 
   return (
     <div className={styles.card}>
       <img className={styles.cardImage} src={data.image}></img>
-      <p>{data.title}</p>
-      <p>${price}</p>
-      <div>
-        <button onClick={minusOne}>-</button>
-        <input
-          className={styles.input}
-          value={quantity}
-          onChange={handleChange}
-        ></input>
-        <button onClick={addOne}>+</button>
-        <button onClick={addToCart}>Add To Cart</button>
+      <div className={styles.infoWrapper}>
+        <p className={styles.itemTitle}>{data.title}</p>
+        <p>${price}</p>
+        <div className={styles.quantityWrapper}>
+          <button className={styles.qtyBtn} onClick={minusOne}>-</button>
+          <input
+            className={styles.input}
+            value={quantity}
+            onChange={handleChange}
+          ></input>
+          <button className={styles.qtyBtn} onClick={addOne}>+</button>
+          <button className={styles.addToCart} onClick={addToCart}>Add To Cart</button>
+        </div>
       </div>
     </div>
   );
