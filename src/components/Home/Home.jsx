@@ -4,7 +4,7 @@ import styles from "./Home.module.css";
 export default function Home() {
   return (
     <>
-      <div className="home">
+      <div className={styles.home}>
         <p className={styles.storeName}>CTRL+FIT</p>
         <img className={styles.img} src={backgroundImg} />
         <p className={styles.subtext}>Your style. Your command. CTRL+FIT.</p>

@@ -12,6 +12,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "FooterLinkFont";
+  src: url("./fonts/FunnelDisplay-VariableFont_wght.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0px;
 }
@@ -20,6 +27,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 100vw;
+  min-height: 100vh;
   background-color: #edede9;
 }
 
@@ -31,6 +39,7 @@ header {
   padding: 10px 20px 10px 20px;
   font-size: 20px;
   align-items: center;
+  z-index: 1;
 }
 
 header > a {
@@ -52,7 +61,8 @@ a:visited {
   display: flex;
   padding-right: 10px;
 }
-a:first-child {
+
+header > a:first-child {
   font-family: "LogoFont", sans-serif;
   font-size: 40px;
   margin-right: 80px;
@@ -61,4 +71,48 @@ a:first-child {
 .cartTotal {
   font-size: 14px;
   margin-left: 2px;
+}
+
+footer {
+  display: flex;
+  height: 100px;
+  bottom: 0px;
+  padding: 40px;
+}
+
+.footerLogo {
+  font-family: "LogoFont";
+  font-size: 50px;
+  letter-spacing: 10px;
+  text-align: center;
+  margin: 0px;
+}
+
+.linkContainer {
+  font-family: "FooterLinkFont";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 70px;
+}
+
+.link {
+  display: flex;
+  padding: 6px 0px;
+  text-align: center
+}
+
+.icon {
+  height: 30px;
+  margin-right: 10px;
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+  align-content: center;
+}
+
+footer a:visited {
+  color: black;
 }
