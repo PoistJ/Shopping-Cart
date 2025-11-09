@@ -26,8 +26,8 @@
     position: absolute;
     color: black;
     left: 50%;
-    top: 120px;
-    font-size: 80px;
+    top: 10vh;
+    font-size: 5vw;
     text-shadow: -2px -2px 0 white,
     2px -2px 0 white,
     -2px 2px 0 white,
@@ -39,8 +39,8 @@
 
 .subtext {
     position: absolute;
-    top: 480px;
-    font-size: 30px;
+    top: 30vh;
+    font-size: 2.5vw;
     color: black;
     left: 50%;
     transform: translateX(-50%);
