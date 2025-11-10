@@ -57,6 +57,7 @@ function Card({ cardID, handleTotal }) {
             -
           </button>
           <input
+            id={cardID}
             className={styles.input}
             value={quantity}
             onChange={handleChange}

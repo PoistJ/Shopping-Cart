@@ -3,6 +3,7 @@
   src: url("./../../fonts/FunnelDisplay-VariableFont_wght.ttf");
   font-weight: normal;
   font-style: normal;
+  color :#343a40;
 }
 
 .cardImage {
@@ -17,8 +18,9 @@
   border-width: 2px;
   border-color: white;
   display: grid;
-  grid-template-rows: 300px 140px;
+  grid-template-rows: 300px auto;
   font-family: "ItemFont";
+  background-color: #edede9;
 }
 
 .input {
@@ -35,25 +37,36 @@
 }
 
 .itemTitle {
-    flex-grow: 1;
-    margin: 16px 0px 0px 0px;
+  flex-grow: 1;
+  margin: 16px 0px 0px 0px;
 }
 
 .qtyBtn {
-    border-style: none;
-    background-color: white;
+  border-style: none;
+  background-color: white;
 }
 
 .quantityWrapper {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .addToCart {
-    background-color: black;
-    color: white;
-    font-family: "ItemFont";
-    border-radius: 12px;
-    font-size: 0.7em;
-    margin-left: 20px;
+  background-color: black;
+  color: white;
+  font-family: "ItemFont";
+  border-radius: 12px;
+  font-size: 0.7em;
+  margin-left: 20px;
+  padding: 4px 10px;
+  border-style: none;
+}
+
+.qtyBtn:hover {
+  background-color: #343a40;
+  color: white;
+}
+
+.addToCart:hover {
+  background-color: #6c757d;
 }
