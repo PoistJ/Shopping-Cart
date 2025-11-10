@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <header data-testid="header-element">
-        <Link to="home">C T R L + F I T</Link>
+        <Link className="home" to="home">CTRL+FIT</Link>
         <Link className="shop" to="shop">
           SHOP
         </Link>

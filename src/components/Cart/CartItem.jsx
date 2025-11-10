@@ -14,7 +14,7 @@ function CartItem({ item, quantity, handleTotal }) {
       .finally(() => setLoading(false));
   }, [item]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p data-testid="loading">Loading...</p>;
   if (error) return <p>A network error was encountered</p>;
 
   const price = (Math.round(data.price * 100) / 100).toFixed(2);

@@ -41,7 +41,7 @@ export default function Cart() {
   const grandTotal = Number(subtotal) + Number(delivery);
 
   return (
-    <div className={styles.cartPage}>
+    <div data-testid="cartPage" className={styles.cartPage}>
       <p className={styles.cartHeader}>CART</p>
       <p className={styles.itemTotal}>{itemQuantity} Items</p>
       <div className={styles.cartWrapper}>

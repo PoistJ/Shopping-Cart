@@ -14,7 +14,14 @@ export default function Shop() {
   return (
     <div className={styles.cardContainer}>
       {items.map((item) => {
-        return <Card key={item} cardID={item} handleTotal={handleTotal} />;
+        return (
+          <Card
+            key={item}
+            cardID={item}
+            handleTotal={handleTotal}
+            data-testid="cardElement"
+          />
+        );
       })}
     </div>
   );

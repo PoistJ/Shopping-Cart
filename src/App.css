@@ -52,7 +52,9 @@ a:visited {
   text-decoration: none;
   color: black;
 }
-
+.home {
+  letter-spacing: 10px;
+}
 .shop {
   flex-grow: 1;
 }

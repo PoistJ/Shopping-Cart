@@ -19,7 +19,7 @@ function Card({ cardID, handleTotal }) {
       .finally(() => setLoading(false));
   }, [cardID]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p aria-label="loading">Loading...</p>;
   if (error) return <p>A network error was encountered</p>;
 
   const price = (Math.round(data.price * 100) / 100).toFixed(2);
@@ -53,14 +53,20 @@ function Card({ cardID, handleTotal }) {
         <p className={styles.itemTitle}>{data.title}</p>
         <p>${price}</p>
         <div className={styles.quantityWrapper}>
-          <button className={styles.qtyBtn} onClick={minusOne}>-</button>
+          <button className={styles.qtyBtn} onClick={minusOne}>
+            -
+          </button>
           <input
             className={styles.input}
             value={quantity}
             onChange={handleChange}
           ></input>
-          <button className={styles.qtyBtn} onClick={addOne}>+</button>
-          <button className={styles.addToCart} onClick={addToCart}>Add To Cart</button>
+          <button className={styles.qtyBtn} onClick={addOne}>
+            +
+          </button>
+          <button className={styles.addToCart} onClick={addToCart}>
+            Add To Cart
+          </button>
         </div>
       </div>
     </div>
